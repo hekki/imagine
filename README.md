@@ -24,7 +24,7 @@ $ export AWS_REGION="jp-north-1"
 $ export BUCKET_NAME="bucket-name"
 
 # 実行
-$ docker run -p 8080:8080  -e AWS_REGION -e AWS_ACCESS_KEY_ID -e AWS_SECRET_ACCESS_KEY -e BUCKET_NAME imagine:0.1
+$ docker run --rm -p 8080:8080  -e AWS_REGION -e AWS_ACCESS_KEY_ID -e AWS_SECRET_ACCESS_KEY -e BUCKET_NAME imagine:0.1
 ```
 
 この状態で http:localhost:8080/f=webp,w=1024/1.jpg にアクセスすると、バケットに保存された1.jpgを元に変換された画像が取得できます。
