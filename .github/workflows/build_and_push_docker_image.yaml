@@ -7,8 +7,8 @@ jobs:
   build-and-push:
     runs-on: ubuntu-latest
     env:
-      IMAGE_NAME: imagine
       REGISTRY: imagine.sakuracr.jp
+      IMAGE_NAME: imagine
 
     steps:
       - name: Checkout code
