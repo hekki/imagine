@@ -41,3 +41,20 @@ jobs:
           tags: |
             ${{ env.REGISTRY }}/${{ env.IMAGE_NAME }}:latest
             ${{ env.REGISTRY }}/${{ env.IMAGE_NAME }}:${{ env.COMMIT_SHORT_SHA }}
+
+      - uses: ruby/setup-ruby@v1
+        with:
+          ruby-version: "3.3"
+          bundler-cache: true
+
+      - name: Install dependencies
+        run: gem install json
+
+      - name: Release
+        env:
+          SAKURACLOUD_ACCESS_TOKEN: ${{ secrets.SAKURACLOUD_ACCESS_TOKEN }}
+          SAKURACLOUD_ACCESS_TOKEN_SECRET: ${{ secrets.SAKURACLOUD_ACCESS_TOKEN_SECRET }}
+          APPLICATION_ID: ${{ secrets.APPLICATION_ID }}
+          CR_PASSWORD: ${{ secrets.SAKURACR_PASSWORD }}
+          IMAGE_TAG: ${{ env.COMMIT_SHORT_SHA }}
+        run: ruby release.rb
