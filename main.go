@@ -82,7 +82,7 @@ func main() {
 		c.Data(http.StatusOK, http.DetectContentType(resData), resData)
 	})
 
-	r.Run(":80")
+	r.Run(":8080")
 }
 
 func convert(buf []byte, t bimg.ImageType, width, height int) ([]byte, error) {
