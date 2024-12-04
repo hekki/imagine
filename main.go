@@ -26,6 +26,10 @@ func main() {
 
 	r := gin.Default()
 
+	r.GET("/livecheck", func(c *gin.Context) {
+		c.String(http.StatusOK, "ok")
+	})
+
 	r.GET("/:params/:key", func(c *gin.Context) {
 		key := c.Param("key")
 		buf, err := getImage(ctx, &bucketName, &key)
