@@ -18,7 +18,7 @@
     - `AWS_ACCESS_KEY_ID`, `AWS_SECRET_ACCESS_KEY`: さくらのオブジェクトストレージの管理画面から発行できるアクセスキーとシークレットアクセスキー。
     - `AWS_REGION`: さくらのオブジェクトストレージのリージョン名。`jp-north-1` 固定。
     - `BUCKET_NAME`: さくらのオブジェクトストレージに作成したバケットの名前。
-- GitHubリポジトリの `Actions secrets and variables` に `APPLICATION_ID`, `SAKURACLOUD_ACCESS_TOKEN`, `SAKURACLOUD_ACCESS_TOKEN_SECRET`, `SAKURACR_USER`, `SAKURACR_PASSWORD` を設定する
+- GitHubリポジトリの `Actions secrets and variables` に `APPLICATION_ID`, `SAKURACLOUD_ACCESS_TOKEN`, `SAKURACLOUD_ACCESS_TOKEN_SECRET`, `SAKURACR_USER`, `SAKURACR_PASSWORD` を `Repository secrets` として登録する
   - https://docs.github.com/ja/actions/security-for-github-actions/security-guides/using-secrets-in-github-actions
   - `APPLICATION_ID`: AppRunのApplication ID
   - `SAKURACLOUD_ACCESS_TOKEN`, `SAKURACLOUD_ACCESS_TOKEN_SECRET`: さくらのクラウドのアクセストークンとアクセストークンシークレット
