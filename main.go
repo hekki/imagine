@@ -87,9 +87,10 @@ func main() {
 
 func convert(buf []byte, t bimg.ImageType, width, height int) ([]byte, error) {
 	return bimg.Resize(buf, bimg.Options{
-		Type:   t,
-		Width:  width,
-		Height: height,
+		Type:          t,
+		Width:         width,
+		Height:        height,
+		StripMetadata: true,
 	})
 }
 
